@@ -4,7 +4,8 @@
       <q-toolbar>
         <q-btn @click="expand" icon="menu" dense flat round />
         <q-toolbar-title>Quasar App</q-toolbar-title>
-        <div>
+        <div class="q-gutter-x-xs">
+          <q-btn :icon="$q.dark.isActive ? 'brightness_5' : 'brightness_4'" @click="$q.dark.toggle()" dense flat round />
           <q-btn icon="notifications" dense flat round />
         </div>
       </q-toolbar>
