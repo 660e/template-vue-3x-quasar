@@ -1,11 +1,11 @@
 <template>
-  <router-view />
+  <div>axios</div>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'app'
+  name: 'demo-axios'
 });
 </script>
