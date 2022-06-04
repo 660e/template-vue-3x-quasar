@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lhh lpr lff">
-    <q-header elevated>
+    <q-header>
       <q-toolbar>
         <q-btn @click="expand" icon="menu" dense flat round />
         <q-toolbar-title>Quasar App</q-toolbar-title>
@@ -12,7 +12,11 @@
     </q-header>
     <q-drawer v-model="expanded" bordered show-if-above></q-drawer>
     <q-page-container>
-      <router-view />
+      <q-page :style-fn="tweak">
+        <q-scroll-area class="fit">
+          <router-view />
+        </q-scroll-area>
+      </q-page>
     </q-page-container>
   </q-layout>
 </template>
@@ -25,12 +29,18 @@ export default defineComponent({
 
   setup() {
     const expanded = ref(false);
+    const expand = () => {
+      expanded.value = !expanded.value;
+    };
+
+    const tweak = (offset, height) => {
+      return { height: `${height - offset}px` };
+    };
 
     return {
       expanded,
-      expand() {
-        expanded.value = !expanded.value;
-      }
+      expand,
+      tweak
     };
   }
 });
