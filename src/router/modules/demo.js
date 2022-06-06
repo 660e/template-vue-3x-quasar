@@ -21,6 +21,11 @@ export default {
       path: 'filters',
       name: 'demo-filters',
       component: () => import('pages/demo/filters.vue')
+    },
+    {
+      path: 'form',
+      name: 'demo-form',
+      component: () => import('pages/demo/form.vue')
     }
   ]
 };
