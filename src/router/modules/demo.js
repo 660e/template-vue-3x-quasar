@@ -16,6 +16,11 @@ export default {
       path: 'echarts',
       name: 'demo-echarts',
       component: () => import('pages/demo/echarts.vue')
+    },
+    {
+      path: 'filters',
+      name: 'demo-filters',
+      component: () => import('pages/demo/filters.vue')
     }
   ]
 };
