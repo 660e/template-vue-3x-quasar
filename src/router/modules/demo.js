@@ -41,6 +41,11 @@ export default {
       component: () => import('pages/demo/keep-alive.vue')
     },
     {
+      path: 'mockjs',
+      name: 'demo-mockjs',
+      component: () => import('pages/demo/mockjs.vue')
+    },
+    {
       path: 'router-view',
       name: 'demo-router-view',
       component: () => import('pages/demo/router-view.vue'),
