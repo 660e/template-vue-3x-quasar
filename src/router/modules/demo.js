@@ -31,6 +31,18 @@ export default {
       path: 'i18n',
       name: 'demo-i18n',
       component: () => import('pages/demo/i18n.vue')
+    },
+    {
+      path: 'router-view',
+      name: 'demo-router-view',
+      component: () => import('pages/demo/router-view.vue'),
+      children: [
+        {
+          path: 'details',
+          name: 'demo-router-view-details',
+          component: () => import('pages/demo/pages/details.vue')
+        }
+      ]
     }
   ]
 };
