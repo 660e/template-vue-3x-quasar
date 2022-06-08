@@ -20,13 +20,11 @@ export default defineComponent({
     const dialog = ref(false);
     const input = ref('');
 
+    const confirm = () => emit('confirm', { b: input.value });
+
     const show = params => {
       dialog.value = true;
       input.value = params.a;
-    };
-
-    const confirm = () => {
-      emit('confirm', { b: input.value });
     };
 
     expose({
@@ -36,7 +34,6 @@ export default defineComponent({
     return {
       dialog,
       input,
-      show,
       confirm
     };
   }

@@ -7,7 +7,7 @@
     <div style="width: 300px">
       <div class="q-pb-sm">External</div>
       <q-input
-        v-model="external.name"
+        v-model="v$.name.$model"
         @blur="v$.name.$touch"
         :error="v$.name.$error"
         :error-message="v$.name.required.$message"
@@ -47,7 +47,6 @@ export default defineComponent({
     return {
       internal,
       internalRules,
-      external,
       v$
     };
   }

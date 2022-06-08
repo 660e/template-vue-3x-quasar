@@ -22,9 +22,7 @@ export default defineComponent({
   setup() {
     const { locale, t } = useI18n({ useScope: 'global' });
     const content = t('test');
-    const language = lang => {
-      locale.value = lang;
-    };
+    const language = lang => (locale.value = lang);
 
     return {
       locale,

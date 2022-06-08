@@ -38,15 +38,11 @@ export default defineComponent({
 
   setup() {
     const expanded = ref(false);
-    const expand = () => {
-      expanded.value = !expanded.value;
-    };
+    const expand = () => (expanded.value = !expanded.value);
 
     const links = routes.find(r => r.path === '/demo').children;
 
-    const tweak = (offset, height) => {
-      return { height: `${height - offset}px` };
-    };
+    const tweak = (offset, height) => ({ height: `${height - offset}px` });
 
     return {
       expanded,
