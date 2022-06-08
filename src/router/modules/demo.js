@@ -56,6 +56,11 @@ export default {
           component: () => import('pages/demo/pages/details.vue')
         }
       ]
+    },
+    {
+      path: 'transition',
+      name: 'demo-transition',
+      component: () => import('pages/demo/transition.vue')
     }
   ]
 };

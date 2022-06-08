@@ -23,9 +23,11 @@
       <q-page :style-fn="tweak">
         <q-scroll-area class="fit">
           <router-view v-slot="{ Component }">
-            <keep-alive :include="include" :exclude="[]">
-              <component :is="Component" />
-            </keep-alive>
+            <transition>
+              <keep-alive :include="include" :exclude="[]">
+                <component :is="Component" />
+              </keep-alive>
+            </transition>
           </router-view>
         </q-scroll-area>
       </q-page>
