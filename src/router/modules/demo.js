@@ -33,6 +33,14 @@ export default {
       component: () => import('pages/demo/i18n.vue')
     },
     {
+      path: 'keep-alive',
+      name: 'demo-keep-alive',
+      meta: {
+        keepAlive: true
+      },
+      component: () => import('pages/demo/keep-alive.vue')
+    },
+    {
       path: 'router-view',
       name: 'demo-router-view',
       component: () => import('pages/demo/router-view.vue'),

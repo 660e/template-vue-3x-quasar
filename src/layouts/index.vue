@@ -22,7 +22,11 @@
     <q-page-container>
       <q-page :style-fn="tweak">
         <q-scroll-area class="fit">
-          <router-view />
+          <router-view v-slot="{ Component }">
+            <keep-alive :include="include" :exclude="[]">
+              <component :is="Component" />
+            </keep-alive>
+          </router-view>
         </q-scroll-area>
       </q-page>
     </q-page-container>
@@ -40,15 +44,18 @@ export default defineComponent({
     const expanded = ref(false);
     const expand = () => (expanded.value = !expanded.value);
 
-    const links = routes.find(r => r.path === '/demo').children;
+    const links = routes.find(e => e.path === '/demo').children;
 
     const tweak = (offset, height) => ({ height: `${height - offset}px` });
+
+    const include = links.filter(e => e.meta && e.meta.keepAlive).map(e => e.name);
 
     return {
       expanded,
       expand,
       links,
-      tweak
+      tweak,
+      include
     };
   }
 });
