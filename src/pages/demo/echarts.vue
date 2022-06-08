@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { defineComponent, ref, onMounted } from 'vue';
+import { defineComponent, onMounted } from 'vue';
 import * as echarts from 'echarts';
 
 const option = {
