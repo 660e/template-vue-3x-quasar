@@ -26,6 +26,11 @@ export default {
       path: 'form',
       name: 'demo-form',
       component: () => import('pages/demo/form.vue')
+    },
+    {
+      path: 'i18n',
+      name: 'demo-i18n',
+      component: () => import('pages/demo/i18n.vue')
     }
   ]
 };
