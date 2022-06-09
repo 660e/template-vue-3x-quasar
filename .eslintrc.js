@@ -63,7 +63,6 @@ module.exports = {
     'eqeqeq': 1,
     'indent': [1, 2, { SwitchCase: 1 }],
     'keyword-spacing': 1,
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'object-curly-spacing': [1, 'always'],
     'prefer-promise-reject-errors': 'off',
     'quotes': [1, 'single']
